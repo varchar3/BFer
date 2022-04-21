@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/weapons_back">
+
+    <ImageView
+        android:id="@+id/iv_weapons"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@color/black_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp" />
+
+    <TextView
+        android:id="@+id/weapon_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_weapons"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="MG42"
+        />
+
+    <TextView
+        android:id="@+id/kills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_weapons"
+        app:layout_constraintTop_toBottomOf="@+id/weapon_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="击杀:"
+        />
+
+    <TextView
+        android:id="@+id/tv_kills_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/kills"
+        app:layout_constraintTop_toBottomOf="@+id/weapon_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="1"
+        />
+
+    <TextView
+        android:id="@+id/kpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_kills_num"
+        app:layout_constraintTop_toBottomOf="@+id/weapon_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="KPM:"
+        />
+
+    <TextView
+        android:id="@+id/tv_kpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/kpm"
+        app:layout_constraintTop_toBottomOf="@+id/weapon_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="0.54"
+        />
+
+    <TextView
+        android:id="@+id/accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_head_shot"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kpm"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="命中:"
+        />
+
+    <TextView
+        android:id="@+id/tv_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/accuracy"
+        app:layout_constraintTop_toBottomOf="@+id/kpm"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="6.1%"
+        />
+
+    <TextView
+        android:id="@+id/head_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_weapons"
+        app:layout_constraintTop_toBottomOf="@+id/kills"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="爆头率:"
+        />
+
+    <TextView
+        android:id="@+id/tv_head_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/head_shot"
+        app:layout_constraintTop_toBottomOf="@+id/kills"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="30.77%"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

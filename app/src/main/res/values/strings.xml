@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BFer</string>
+    <string name="please_check_network">请检查网络是否开启</string>
+    <string name="please_login">请先登录</string>
+    <string name="loadings">正在加载..</string>
+    <string name="input_weapon_here">Search weapons Here</string>
+    <string name="input_vehicle_here">Search vehicles Here</string>
+</resources>

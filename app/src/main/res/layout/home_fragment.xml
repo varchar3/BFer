@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/grey_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_topper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_normal_dialog"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="10dp">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:drawableLeft="@drawable/ic_machinegun"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_rank"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/played_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_time"
+                app:layout_constraintLeft_toRightOf="@+id/rank"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/searching"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_pc"
+                app:layout_constraintLeft_toRightOf="@+id/played_time"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/fetch_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:text="查其它人>>"
+                android:textColor="@color/transparent"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/cl_topper"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_downer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/drawable_normal_dialog"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view"
+            tools:layout_editor_absoluteX="10dp">
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_kd"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="KD:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_spm"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_kd"
+                app:title="SPM:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_kpm"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_spm"
+                app:title="KPM:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_win_percent"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_kpm"
+                app:title="胜率:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_clasz"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_win_percent"
+                app:title="最佳兵种:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_kill"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_clasz"
+                app:title="击杀:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_headshot"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_kill"
+                app:title="爆头:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_die"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_headshot"
+                app:title="死亡:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_accuracy"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_die"
+                app:title="命中率:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_headshots_present"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_accuracy"
+                app:title="爆头率:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_win"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_headshots_present"
+                app:title="胜场:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_lose"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_win"
+                app:title="败场:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_longest_head_shot"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_lose"
+                app:title="最远爆头:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_assists"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_longest_head_shot"
+                app:title="助攻:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_revives"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_assists"
+                app:title="复仇:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_dog_tags"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_revives"
+                app:title="狗牌:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_kill_streak"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_dog_tags"
+                app:title="连杀记录:" />
+
+            <com.lzc.bfer.widget.ItemWidget
+                android:id="@+id/iw_heal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:icon="@drawable/ic_stars"
+                app:title="急救:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_kill_streak"
+                tools:layout_editor_absoluteX="1dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

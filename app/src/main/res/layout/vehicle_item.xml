@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/weapons_back">
+
+    <ImageView
+        android:id="@+id/iv_vehicle"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:background="@color/black_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp" />
+
+    <TextView
+        android:id="@+id/vehicle_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_vehicle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="圣沙蒙"
+        />
+
+    <TextView
+        android:id="@+id/kills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_vehicle"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="击杀:"
+        />
+
+    <TextView
+        android:id="@+id/tv_v_kills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/kills"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4" />
+
+    <TextView
+        android:id="@+id/kpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_v_kills"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="KPM:"
+        />
+
+    <TextView
+        android:id="@+id/tv_v_kpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/kpm"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_name"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        />
+
+    <TextView
+        android:id="@+id/destroyed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/iv_vehicle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_v_kpm"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="被摧毁:"
+        />
+
+    <TextView
+        android:id="@+id/tv_destroyed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/destroyed"
+        app:layout_constraintTop_toBottomOf="@+id/kpm"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        />
+
+    <TextView
+        android:id="@+id/time_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/tv_destroyed"
+        app:layout_constraintTop_toBottomOf="@+id/kills"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="时长:"
+        />
+
+    <TextView
+        android:id="@+id/tv_time_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/time_in"
+        app:layout_constraintTop_toBottomOf="@+id/kills"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_4"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

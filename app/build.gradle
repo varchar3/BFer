@@ -1,0 +1,104 @@
+plugins {
+    id 'dep'
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdk dep.BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId dep.BuildConfig.appId
+        minSdk dep.BuildConfig.minSdkVersion
+        targetSdk dep.BuildConfig.targetSdkVersion
+        versionCode dep.BuildConfig.versionCode
+        versionName dep.BuildConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file("../key/shellKey.jks")
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 设置混淆
+            debuggable true
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            multiDexKeepProguard file('multidex-config.pro')
+        }
+
+        release {
+            // 设置混淆
+            minifyEnabled false
+            zipAlignEnabled true
+            debuggable false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            multiDexKeepProguard file('multidex-config.pro')
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation dep.AndroidX.frgKtx
+    implementation dep.AndroidX.coreKtx
+    implementation dep.AndroidX.material
+    implementation dep.AndroidX.appcompat
+    implementation dep.AndroidX.constraint
+
+    implementation dep.Square.gson
+    implementation dep.Square.okHttp3
+    implementation dep.Square.retrofit2
+    implementation dep.Square.interceptor
+
+    implementation dep.Lifecycle.runTime
+    implementation dep.Lifecycle.liveData
+    implementation dep.Lifecycle.viewModel
+
+    implementation dep.Coroutines.coroutinesCore
+    implementation dep.Coroutines.coroutinesAndroid
+
+    implementation dep.Git.walle//->多渠打包
+    implementation dep.Git.glide
+    implementation dep.Git.brvah
+    implementation dep.Sdk.mmKv
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.4.6'
+
+    testImplementation dep.Common.junit
+    androidTestImplementation dep.Common.junitExt
+    androidTestImplementation dep.Common.espressoCore
+
+
+
+}
